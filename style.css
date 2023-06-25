@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Ysabeau+SC:wght@600&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: url(img/fundo.jpg);
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    gap: 20;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    text-align: center;
+    height: 100%;
+    align-items: center;
+}
+.container-item {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;    
+}
+
+.container-item img {
+    max-width: 215px;
+    transform: translateY(0px);
+    animation: float 5s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-30px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.giro {
+    background-color: #ffffffe5;
+    color: rgba(0, 0, 0, 0.911);
+    font-family: 'Ysabeau SC';
+    border: 0;
+    max-width: 215px;
+    border-radius: 3px;
+    font-size: 1.2em;
+    font-weight: bolder;
+    padding: 12px 20px;
+    cursor: pointer;
+    box-shadow: 3px 3px #000000;
+    z-index: 100;
+    margin: 0 auto;
+    transition: 2.5s ease;
+}
+
+.giro:hover {
+    background-color: #ff0000da;
+    transform: rotateX(360deg);
+    box-shadow: 3px 3px #ffffffc9;
+    color: #ffffffe5;
+}
+
+.boxes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background-color: #000000;
+    height: 400px;
+    width: 400px;
+    position: relative;
+    transition: 0.5s ease;
+}
+
+.boxes.big {
+    width: 450px;
+    height: 450px;
+}
+
+.boxes.big .box{
+    transform: rotateZ(360deg);
+}
+
+.box {
+    background-image: url('https://media0.giphy.com/media/ule4vhcY1xEKQ/giphy.gif?cid=ecf05e4738dljp48v3jfzfqhehe5ct4y4iwm7erfw50s648y&ep=v1_gifs_related&rid=giphy.gif&ct=g');
+    background-repeat: no-repeat;
+    background-size: 500px 500px;
+    position: relative;
+    height: 100px;
+    width: 100px;
+    transition: 2.4s ease;
+}
+
+.box::after {
+    content: '';
+    background-color: #ff0000c9;
+    position: absolute;
+    top: 8px;
+    right: -15px;
+    height: 100%;
+    width: 15px;
+    transform: skewY(45deg);
+}
+
+.box::before {
+    content: '';
+    background-color: #ff0000c9;
+    position: absolute;
+    bottom: -15px;
+    left: 8px;
+    height: 15px;
+    width: 100%;
+    transform: skewX(45deg);
+}
+
+footer{
+    display: block;
+    background-color: #000000;
+    color: white;
+    text-align: center;
+    z-index: 10;
+    width: 100%;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    padding: 3px;
+}
+
+footer a:hover {
+    color: red;
+    text-decoration: none;
+}
